@@ -214,6 +214,103 @@ Wire Wire Line
 Connection ~ 5200 3350
 Text Notes 3350 1750 0    60   ~ 0
 Add jumpers to select power from convertor or mbed and disconnect mbed even if using on board 
-Text Notes 3350 3950 0    60   ~ 0
+Text Notes 6800 2550 0    60   ~ 0
 Add filter and use 2nd half of op amp for battery measure.\nAdd on board temp sensor\nAdd off board temp sensor\nExternal serial for gps, display, (comms to pc?)\nAdd SD card socket
+$Comp
+L R R?
+U 1 1 5513D560
+P 4750 3850
+F 0 "R?" V 4830 3850 40  0000 C CNN
+F 1 "48k" V 4757 3851 40  0000 C CNN
+F 2 "" V 4680 3850 30  0000 C CNN
+F 3 "" H 4750 3850 30  0000 C CNN
+	1    4750 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5513D5D3
+P 5050 4250
+F 0 "R?" V 5130 4250 40  0000 C CNN
+F 1 "2K" V 5057 4251 40  0000 C CNN
+F 2 "" V 4980 4250 30  0000 C CNN
+F 3 "" H 5050 4250 30  0000 C CNN
+	1    5050 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5513D606
+P 5300 4200
+F 0 "C?" H 5300 4300 40  0000 L CNN
+F 1 "4u7" H 5306 4115 40  0000 L CNN
+F 2 "" H 5338 4050 30  0000 C CNN
+F 3 "" H 5300 4200 60  0000 C CNN
+	1    5300 4200
+	1    0    0    -1  
+$EndComp
+Text Label 4500 3850 2    60   ~ 0
+BP
+Wire Wire Line
+	5000 3850 5550 3850
+Wire Wire Line
+	5050 3850 5050 4000
+Wire Wire Line
+	5300 3850 5300 4000
+Connection ~ 5050 3850
+Wire Wire Line
+	5050 4500 5050 4550
+Wire Wire Line
+	5050 4550 5300 4550
+Wire Wire Line
+	5300 4550 5300 4400
+$Comp
+L GND #PWR?
+U 1 1 5513D6BA
+P 5200 4650
+F 0 "#PWR?" H 5200 4650 30  0001 C CNN
+F 1 "GND" H 5200 4580 30  0001 C CNN
+F 2 "" H 5200 4650 60  0000 C CNN
+F 3 "" H 5200 4650 60  0000 C CNN
+	1    5200 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4650 5200 4550
+Connection ~ 5200 4550
+$Comp
+L MCP6002 U2
+U 2 1 5513D6FD
+P 6050 3950
+F 0 "U2" H 6200 4100 60  0000 C CNN
+F 1 "MCP6002" H 6250 3750 60  0000 C CNN
+F 2 "" H 6050 3950 60  0000 C CNN
+F 3 "" H 6050 3950 60  0000 C CNN
+	2    6050 3950
+	1    0    0    -1  
+$EndComp
+Connection ~ 5300 3850
+Wire Wire Line
+	5550 4050 5500 4050
+Wire Wire Line
+	5500 4050 5500 3650
+Wire Wire Line
+	5500 3650 6600 3650
+Wire Wire Line
+	6600 3650 6600 3950
+Wire Wire Line
+	6600 3950 6550 3950
+$Comp
+L GND #PWR?
+U 1 1 5513D82C
+P 5950 4650
+F 0 "#PWR?" H 5950 4650 30  0001 C CNN
+F 1 "GND" H 5950 4580 30  0001 C CNN
+F 2 "" H 5950 4650 60  0000 C CNN
+F 3 "" H 5950 4650 60  0000 C CNN
+	1    5950 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4350 5950 4650
 $EndSCHEMATC
